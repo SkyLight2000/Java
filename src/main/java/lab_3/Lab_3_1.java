@@ -18,7 +18,7 @@ public class Lab_3_1 {
         Scanner in = new Scanner(System.in);
         Random rnd = new Random();
         int mas[] = new int[10];
-        System.out.println("¬ведите число: ");
+        System.out.println("Enter number: ");
         int s = in.nextInt();
         for(int i = 0; i < mas.length; i++){
             mas[i] = rnd.nextInt(10 - -10);
