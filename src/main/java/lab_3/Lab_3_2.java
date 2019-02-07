@@ -22,15 +22,13 @@ public class Lab_3_2 {
             System.out.println("");
         }
         boolean upper = true;
-        boolean lower = true;
+        boolean lower = Strue;
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){  
-                if (i > j && (matrix[i][j] + matrix[i][j] != 0))
-                {
+                if (i > j && (matrix[i][j] + matrix[i][j] != 0)){
                     upper = false;
                 }
-                if (i < j && (matrix[i][j] + matrix[i][j] != 0))
-                {
+                if (i < j && (matrix[i][j] + matrix[i][j] != 0)){
                     lower = false;
                 }
             }
