@@ -54,7 +54,6 @@ public class Lab_2 {
                     }
                     break;
             }
-            in.close();
         } 
         catch (Exception e) {
             System.out.println("Invalid input");

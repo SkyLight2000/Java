@@ -18,7 +18,6 @@ public class Lab_1 {
             int a = in.nextInt();
             int b = in.nextInt();
             System.out.printf("%d+%d=%d\n",a , b, a + b);
-            in.close();
         } 
         catch(Exception e){
             System.out.println("Invalid input");
