@@ -36,7 +36,7 @@ public class Lab_3_1 {
             System.out.println("Минимальное число, которое меньше заданного: " + min);
         }
         catch(Exception e){
-            System.out.println("Invalid input");
+            System.out.println("Неверные данные");
         }
     }
     

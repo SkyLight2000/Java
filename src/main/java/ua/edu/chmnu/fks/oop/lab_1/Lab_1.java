@@ -14,13 +14,13 @@ import java.util.Scanner;
 public class Lab_1 {
     public static void main(String[] args) {
         try (Scanner in = new Scanner(System.in)) {
-            System.out.println("Введите два числа: ");
+            System.out.println("Р’РІРµРґРёС‚Рµ РґРІР° С‡РёСЃР»Р°: ");
             int a = in.nextInt();
             int b = in.nextInt();
             System.out.printf("%d+%d=%d\n",a , b, a + b);
         } 
         catch(Exception e){
-            System.out.println("Invalid input");
+            System.out.println("РќРµРІРµСЂРЅС‹Рµ РґР°РЅРЅС‹Рµ");
         }
     }
 }

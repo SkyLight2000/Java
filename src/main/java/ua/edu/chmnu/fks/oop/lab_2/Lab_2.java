@@ -14,9 +14,9 @@ import java.util.Scanner;
 public class Lab_2 {
 
     public static void main(String[] args) {
-        System.out.println("1. Обчислити значення виразу із заданими параметрами");
-        System.out.println("2. Обчислити значення виразу з випадковими параметрами");
-        System.out.println("3. Обчислити екстремуми");
+        System.out.println("1. РћР±С‡РёСЃР»РёС‚Рё Р·РЅР°С‡РµРЅРЅСЏ РІРёСЂР°Р·Сѓ С–Р· Р·Р°РґР°РЅРёРјРё РїР°СЂР°РјРµС‚СЂР°РјРё");
+        System.out.println("2. РћР±С‡РёСЃР»РёС‚Рё Р·РЅР°С‡РµРЅРЅСЏ РІРёСЂР°Р·Сѓ Р· РІРёРїР°РґРєРѕРІРёРјРё РїР°СЂР°РјРµС‚СЂР°РјРё");
+        System.out.println("3. РћР±С‡РёСЃР»РёС‚Рё РµРєСЃС‚СЂРµРјСѓРјРё");
         try (Scanner in = new Scanner(System.in)) {
             double y;
             int s = in.nextInt();
@@ -56,7 +56,7 @@ public class Lab_2 {
             }
         } 
         catch (Exception e) {
-            System.out.println("Invalid input");
+            System.out.println("РќРµРІРµСЂРЅС‹Рµ РґР°РЅРЅС‹Рµ");
         }
     }
 

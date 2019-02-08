@@ -33,13 +33,13 @@ public class Lab_3_2 {
             }
         }
         if(upper == true){
-            System.out.println("Matrix is upper triangular");
+            System.out.println("Матрица верхнетреугольная");
         }
         else if(lower == true){
-            System.out.println("Matrix is lower triangular");
+            System.out.println("Матрица нижнетреугольная");
         }
         else{
-            System.out.println("Matrix isn't upper or lower triangular");
+            System.out.println("Матрица не является верхне- или нижнетреугольной");
         }
     }
     
