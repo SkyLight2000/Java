@@ -48,7 +48,8 @@ public class Lab_2 {
                         double dy1 = y - y1, dy2 = y2 - y;
                         if (dy1 < 0 && dy2 > 0) {
                             System.out.printf("Min (%.3f, %.3f)\n", xx, y);
-                        } else if (dy1 > 0 && dy2 < 0) {
+                        } 
+                        else if (dy1 > 0 && dy2 < 0) {
                             System.out.printf("Max (%.3f, %.3f)\n", xx, y);
                         }
                     }
@@ -61,6 +62,6 @@ public class Lab_2 {
     }
 
     static double f(double a, double b, double c, double x) {
-        return (Math.pow((Math.pow(Math.cos(a), 2) * x - c * x), 1 / 5)) / Math.log(Math.cbrt(Math.pow(x, 5) + b / x));
+        return (Math.pow((Math.pow(Math.cos(a * x), 2) - c * x), 1 / 5)) / Math.log(Math.cbrt(Math.pow(x, 5) + b / x));
     }
 }
