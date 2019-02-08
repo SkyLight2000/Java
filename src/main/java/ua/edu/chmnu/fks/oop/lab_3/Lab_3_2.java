@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab_3;
-
+package ua.edu.chmnu.fks.oop.lab_3;
 
 /**
  *
@@ -22,7 +21,7 @@ public class Lab_3_2 {
             System.out.println("");
         }
         boolean upper = true;
-        boolean lower = Strue;
+        boolean lower = true;
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){  
                 if (i > j && (matrix[i][j] + matrix[i][j] != 0)){
