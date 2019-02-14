@@ -33,14 +33,14 @@ public class Lab_3_1 {
                     min = mas[i];
                 }
             }
-            System.out.println("Минимальное число, которое меньше заданного: " + min);
+            System.out.println("Минимальное число, которое больше заданного: " + min);
         }
         catch(Exception e){
             System.out.println("Неверные данные");
         }
     }
     
-    static void inverse(int[] mas){
+    private static void inverse(int[] mas){
         for (int i = 0; i < mas.length / 2; i++) {
             int tmp = mas[i];
             mas[i] = mas[mas.length - i - 1];

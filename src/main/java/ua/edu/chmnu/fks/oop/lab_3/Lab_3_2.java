@@ -27,7 +27,7 @@ public class Lab_3_2 {
                 if (i > j && (matrix[i][j] + matrix[i][j] != 0)){
                     upper = false;
                 }
-                if (i < j && (matrix[i][j] + matrix[i][j] != 0)){
+                else if (i < j && (matrix[i][j] + matrix[i][j] != 0)){
                     lower = false;
                 }
             }

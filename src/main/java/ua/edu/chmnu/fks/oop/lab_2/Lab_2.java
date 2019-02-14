@@ -61,7 +61,7 @@ public class Lab_2 {
         }
     }
 
-    static double f(double a, double b, double c, double x) {
+    private static double f(double a, double b, double c, double x) {
         return (Math.pow((Math.pow(Math.cos(a * x), 2) - c * x), 1 / 5)) / Math.log(Math.cbrt(Math.pow(x, 5) + b / x));
     }
 }
