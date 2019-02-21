@@ -32,8 +32,8 @@ public class Lab_3_1 {
                 if(mas[i] > s){
                     min = mas[i];
                 }
-            }
-            System.out.println("Минимальное число, которое больше заданного: " + min);
+            }System.out.println(
+            "Минимальное число, которое больше заданного: " + min);
         }
         catch(Exception e){
             System.out.println("Неверные данные");

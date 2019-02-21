@@ -31,7 +31,7 @@ public class Lab_4 {
         }
     }
 
-    private static int partition(int arr[], int left, int right) {
+    public static int partition(int arr[], int left, int right) {
         int pivot = new Random().nextInt(right - left + 1) + left;
         int i = left, j = right;
         while (i < j) {
@@ -51,7 +51,7 @@ public class Lab_4 {
         return pivot;
     }
 
-    private static void tailQuickSort(int arr[], int left, int right) {
+    public static void tailQuickSort(int arr[], int left, int right) {
         while (left < right) {
             int pivot = partition(arr, left, right);
             tailQuickSort(arr, left, pivot - 1);
