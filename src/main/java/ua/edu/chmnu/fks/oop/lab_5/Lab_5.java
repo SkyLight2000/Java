@@ -11,18 +11,18 @@ package ua.edu.chmnu.fks.oop.lab_5;
  */
 public class Lab_5 {
     public static void main(String[] args){
-        Point a = new Point(3, 2);
-        Point b = new Point(5, 4);
-        Point c = new Point(10, 4);
-        Point d = new Point(8, 2);
+        Point a1 = new Point(3, 2);
+        Point b1 = new Point(5, 4);
+        Point c1 = new Point(10, 4);
+        Point d1 = new Point(8, 2);
 
-        Point a1 = new Point(1, 5);
-        Point b1 = new Point(4, 8);
-        Point c1 = new Point(10, 8);
-        Point d1 = new Point(7, 5);
+        Point a2 = new Point(1, 5);
+        Point b2 = new Point(4, 8);
+        Point c2 = new Point(10, 8);
+        Point d2 = new Point(7, 5);
 
-        Parall p1 = new Parall(a, b, c, d);
-        Parall p2 = new Parall(a1, b1, c1, d1);
+        Parall p1 = new Parall(a1, b1, c1, d1);
+        Parall p2 = new Parall(a2, b2, c2, d2);
 
         double p1Perimeter = p1.Perimeter();
         double p1Square = p1.Square();
