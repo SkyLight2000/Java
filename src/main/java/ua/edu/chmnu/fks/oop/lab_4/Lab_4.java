@@ -58,7 +58,15 @@ public class Lab_4 {
             left = pivot + 1;
         }
     }
-    private static boolean isOrdered(int[] arr) {
+
+    private static void show(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("");
+    }
+
+    public static boolean isOrdered(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             if (arr[i - 1] > arr[i]) {
                 return false;
@@ -67,10 +75,4 @@ public class Lab_4 {
         return true;
     }
 
-    private static void show(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println("");
-    }
 }

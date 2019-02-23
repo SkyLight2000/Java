@@ -41,11 +41,23 @@ public class Lab_4_Test {
     @Test
     public void testSort(){
         int arr[] = {4, 2, 7, -9, 1};
-        int exparr[] = {4, 2, 7, -9, 1};
         int expected[] = {-9, 1, 2, 4, 7};
-        //Lab_4.tailQuickSort(arr, 0, arr.length - 1);
-        //Arrays.sort(exparr);
-        assertEquals(exparr, arr);
+        Lab_4.tailQuickSort(arr, 0, arr.length - 1);
+        assertArrayEquals(expected, arr);
+    }
+
+    @Test
+    public void testIsOrdered(){
+        int arr[] = {-9, 1, 2, 4, 7};
+        boolean a = Lab_4.isOrdered(arr);
+        assertEquals(true, a);
+    }
+
+    @Test
+    public void testNotOrdered(){
+        int arr[] = {4, 2, 7, -9, 1};
+        boolean a = Lab_4.isOrdered(arr);
+        assertEquals(false, a);
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
