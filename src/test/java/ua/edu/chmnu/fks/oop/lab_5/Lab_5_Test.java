@@ -20,17 +20,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class Lab_5_Test {
 
-    Point a1 = new Point(3, 2);
-    Point b1 = new Point(5, 4);
-    Point c1 = new Point(10, 4);
-    Point d1 = new Point(8, 2);
-    Parall p1 = new Parall(a1, b1, c1, d1);
-
-    Point a2 = new Point(1, 5);
-    Point b2 = new Point(4, 8);
-    Point c2 = new Point(10, 8);
-    Point d2 = new Point(7, 5);
-    Parall p2 = new Parall(a2, b2, c2, d2);
+    Point a = new Point(3, 2);
+    Point b = new Point(5, 4);
+    Point c = new Point(10, 4);
+    Point d = new Point(8, 2);
+    Parall p = new Parall(a, b, c, d);
 
     public Lab_5_Test() {
     }
@@ -54,21 +48,21 @@ public class Lab_5_Test {
 
     @Test
     public void sideLengthTest(){
-        double sideLength = p1.SideLength(a1, b1);
+        double sideLength = p.SideLength(a, b);
         double expected = 2.83;
         assertEquals(expected, round(sideLength, 2));
     }
 
     @Test
     public void perimeterTest(){
-        double perimeter = p1.Perimeter();
+        double perimeter = p.Perimeter();
         double expected = 15.66;
         assertEquals(expected, round(perimeter, 2));
     }
 
     @Test
     public void squareTest(){
-        double square = p1.Square();
+        double square = p.Square();
         double expected = 10;
         assertEquals(expected, round(square, 2));
     }
