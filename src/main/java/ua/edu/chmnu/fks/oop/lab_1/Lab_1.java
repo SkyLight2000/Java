@@ -5,21 +5,20 @@
  */
 package ua.edu.chmnu.fks.oop.lab_1;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
  * @author User
  */
 public class Lab_1 {
-    public static void main(String[] args) {
+    static public void main(String[] args) {
         try (Scanner in = new Scanner(System.in)) {
             System.out.println("Введите два числа: ");
             int a = in.nextInt();
             int b = in.nextInt();
-            System.out.printf("%d+%d=%d\n",a , b, a + b);
-        } 
-        catch(Exception e){
+            System.out.printf("%d+%d=%d\n", a, b, a + b);
+        } catch (Exception e) {
             System.out.println("Неверные данные");
         }
     }
