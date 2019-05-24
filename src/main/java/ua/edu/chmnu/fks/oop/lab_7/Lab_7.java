@@ -5,7 +5,6 @@ import java.util.Arrays;
 import static java.util.Arrays.sort;
 
 public class Lab_7 {
-
     static public void main(String[] args) {
         int[] arr = { 5, 1, 8, -2, 0, 3, 10 };
 
@@ -60,10 +59,6 @@ public class Lab_7 {
         System.out.println(Arrays.toString(arr));
     }
 
-    @FunctionalInterface
-    public interface Sort{
-        void sort(int[] arr, int low, int high);
-    }
 
     /*public static class QuickSort implements Sort{
         @Override

@@ -5,18 +5,17 @@
  */
 package ua.edu.chmnu.fks.oop.lab_6;
 
-import java.util.Iterator;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
+import ua.edu.chmnu.fks.oop.lab_6.Auditory.Parallelepiped;
+import ua.edu.chmnu.fks.oop.lab_6.Auditory.Parallelogram;
+import ua.edu.chmnu.fks.oop.lab_6.Exceptions.NegativeAngleException;
+import ua.edu.chmnu.fks.oop.lab_6.Exceptions.NegativeHeightException;
+import ua.edu.chmnu.fks.oop.lab_6.Exceptions.NegativeLengthException;
+import ua.edu.chmnu.fks.oop.lab_6.Exceptions.NegativeWidthException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
-import static ua.edu.chmnu.fks.oop.lab_6.Auditory.*;
 
 /**
  *

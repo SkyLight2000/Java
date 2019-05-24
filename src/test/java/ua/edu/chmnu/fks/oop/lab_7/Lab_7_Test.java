@@ -21,7 +21,7 @@ public class Lab_7_Test {
     @Test
     public void quickSortTest(){
         int[] arr = { 5, 1, 8, -2, 0, 3, 10 };
-        Lab_7.Sort qsort = spy(Lab_7.Sort.class);
+        Sort qsort = spy(Sort.class);
         int low = 0;
         int high = arr.length - 1;
         qsort.sort(arr, low, high);

@@ -1,15 +1,11 @@
 package ua.edu.chmnu.fks.oop.lab_6;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
+import ua.edu.chmnu.fks.oop.lab_6.Exceptions.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import static ua.edu.chmnu.fks.oop.lab_6.Lab_6.*;
 
 /**
  *
@@ -19,8 +15,7 @@ public class Lab_6_Test {
 
     @Test
     public void getBookTypeTest(){
-        Manual manual = mock(Manual.class);
-        when(manual.getBookType()).thenReturn("Пособие");
+        Manual manual = new Manual();
         assertEquals("Пособие", manual.getBookType());
     }
 
@@ -99,7 +94,7 @@ public class Lab_6_Test {
     }
 
     @Test
-    public void setYearTest() throws NegativeYearException, FutureYearException {
+    public void setYearTest() throws YearException {
         Manual manual = mock(Manual.class);
         manual.setYear(2000);
         manual.setYear(2004);
@@ -121,7 +116,7 @@ public class Lab_6_Test {
     }
 
     @Test
-    public void setPageNumberTest() throws NegativePageNumberException, EnormousPageNumberException {
+    public void setPageNumberTest() throws PageNumberException {
         Manual manual = mock(Manual.class);
         manual.setPageNumber(250);
         manual.setPageNumber(300);
@@ -143,7 +138,7 @@ public class Lab_6_Test {
     }
 
     @Test
-    public void setPriceTest() throws NegativePriceException, EnormousPriceException {
+    public void setPriceTest() throws PriceException {
         Manual manual = mock(Manual.class);
         manual.setPrice(300);
         manual.setPrice(500);
@@ -162,6 +157,11 @@ public class Lab_6_Test {
 
         doThrow(NegativePriceException.class).when(manual).setPrice(-500);
         doThrow(EnormousPriceException.class).when(manual).setPrice(300800000);
+    }
+
+    @Test
+    public void getByAuthorTest() {
+
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
