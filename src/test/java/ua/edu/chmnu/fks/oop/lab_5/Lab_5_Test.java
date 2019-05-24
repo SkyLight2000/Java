@@ -26,43 +26,23 @@ public class Lab_5_Test {
     Point d = new Point(8, 2);
     Parall p = new Parall(a, b, c, d);
 
-    public Lab_5_Test() {
-    }
-
-    @BeforeAll
-    public static void setUpClass() {
-    }
-
-    @AfterAll
-    public static void tearDownClass() {
-    }
-
-    @BeforeEach
-    public void setUp() {
-
-    }
-
-    @AfterEach
-    public void tearDown() {
-    }
-
     @Test
     public void sideLengthTest(){
-        double sideLength = p.SideLength(a, b);
+        double sideLength = p.sideLength(a, b);
         double expected = 2.83;
         assertEquals(expected, round(sideLength, 2));
     }
 
     @Test
     public void perimeterTest(){
-        double perimeter = p.Perimeter();
+        double perimeter = p.perimeter();
         double expected = 15.66;
         assertEquals(expected, round(perimeter, 2));
     }
 
     @Test
     public void squareTest(){
-        double square = p.Square();
+        double square = p.square();
         double expected = 10;
         assertEquals(expected, round(square, 2));
     }

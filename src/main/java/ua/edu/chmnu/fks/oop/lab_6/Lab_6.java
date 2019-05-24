@@ -2,7 +2,7 @@ package ua.edu.chmnu.fks.oop.lab_6;
 
 public class Lab_6 {
 
-    static public void main(String[] args) {
+    static public void main(String[] args) throws NegativePriceException, NegativeYearException, FutureYearException, EnormousPriceException, EnormousPageNumberException, NegativePageNumberException {
         Manual manual = new Manual(
                 "Нормальная физиология",
                 "Агаджанян Николай Александрович",
@@ -36,12 +36,36 @@ public class Lab_6 {
         private int pageNumber;
         private int price;
 
-        public Book(String name, String author, int year, int pageNumber, int price){
+        public Book(String name, String author, int year, int pageNumber, int price) throws NegativeYearException, FutureYearException, NegativePageNumberException, EnormousPageNumberException, EnormousPriceException, NegativePriceException {
             this.name = name;
             this.author = author;
-            this.year = year;
-            this.pageNumber = pageNumber;
-            this.price = price;
+            if(year > 0 && year < 2019) {
+                this.year = year;
+            }
+            else if(year < 0) {
+                throw new NegativeYearException("Year can't be less than 0");
+            }
+            else{
+                throw new FutureYearException("Are you from future?");
+            }
+            if(pageNumber > 0 && pageNumber < 23675) {
+                this.pageNumber = pageNumber;
+            }
+            else if(pageNumber < 0) {
+                throw new NegativePageNumberException("Page number can't be less than 0");
+            }
+            else{
+                throw new EnormousPageNumberException("It can't be bigger then book of the fund min a-kasse, the biggest book in the world(It has 23675 pages!)");
+            }
+            if(price > 0 && price < 300800000) {
+                this.price = price;
+            }
+            else if(price < 0) {
+                throw new NegativePriceException("Price can't be less than 0");
+            }
+            else {
+                throw new EnormousPriceException("It can't be more expensive than Leicester Code, the most expensive book in the world");
+            }
         }
 
         public abstract String getBookType();
@@ -74,23 +98,47 @@ public class Lab_6 {
             this.author = author;
         }
 
-        public void setYear(int year){
-            this.year = year;
+        public void setYear(int year) throws NegativeYearException, FutureYearException {
+            if(year > 0 && year < 2019) {
+                this.year = year;
+            }
+            else if(year < 0) {
+                throw new NegativeYearException("Year can't be less than 0");
+            }
+            else{
+                throw new FutureYearException("Are you from future?");
+            }
         }
 
-        public void setPageNumber(int pageNumber){
-            this.pageNumber = pageNumber;
+        public void setPageNumber(int pageNumber) throws NegativePageNumberException, EnormousPageNumberException {
+            if(pageNumber > 0 && pageNumber < 23675) {
+                this.pageNumber = pageNumber;
+            }
+            else if(pageNumber < 0) {
+                throw new NegativePageNumberException("Page number can't be less than 0");
+            }
+            else{
+                throw new EnormousPageNumberException("It can't be bigger then book of the fund min a-kasse, the biggest book in the world(It has 23675 pages!)");
+            }
         }
 
-        public void setPrice(int price){
-            this.price = price;
+        public void setPrice(int price) throws NegativePriceException, EnormousPriceException {
+            if(price > 0 && price < 300800000) {
+                this.price = price;
+            }
+            else if(price < 0) {
+                throw new NegativePriceException("Price can't be less than 0");
+            }
+            else {
+                throw new EnormousPriceException("It can't be more expensive than Leicester Code, the most expensive book in the world");
+            }
         }
     }
 
     static class Textbook extends Book{
         private String bookType = "Учебник";
 
-        public Textbook(String name, String author, int year, int pageNumber, int price) {
+        public Textbook(String name, String author, int year, int pageNumber, int price) throws NegativePriceException, NegativeYearException, FutureYearException, EnormousPriceException, EnormousPageNumberException, NegativePageNumberException {
             super(name, author, year, pageNumber, price);
         }
 
@@ -113,7 +161,7 @@ public class Lab_6 {
     static class Manual extends Book{
         private String bookType = "Пособие";
 
-        public Manual(String name, String author, int year, int pageNumber, int price) {
+        public Manual(String name, String author, int year, int pageNumber, int price) throws NegativePriceException, NegativeYearException, FutureYearException, EnormousPriceException, EnormousPageNumberException, NegativePageNumberException {
             super(name, author, year, pageNumber, price);
         }
 
@@ -136,7 +184,7 @@ public class Lab_6 {
     static class Encyclopedia extends Book{
         private String bookType = "Энциклопедия";
 
-        public Encyclopedia(String name, String author, int year, int pageNumber, int price) {
+        public Encyclopedia(String name, String author, int year, int pageNumber, int price) throws NegativePriceException, NegativeYearException, FutureYearException, EnormousPriceException, EnormousPageNumberException, NegativePageNumberException {
             super(name, author, year, pageNumber, price);
         }
 

@@ -18,25 +18,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author User
  */
 public class Lab_4_Test {
-    
-    public Lab_4_Test() {
-    }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
 
     @Test
     public void testSort(){

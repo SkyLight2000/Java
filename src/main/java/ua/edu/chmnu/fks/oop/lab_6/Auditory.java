@@ -2,7 +2,7 @@ package ua.edu.chmnu.fks.oop.lab_6;
 
 public class Auditory {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NegativeLengthException, NegativeAngleException, NegativeWidthException {
         Parallelogram par1 = new Parallelogram(4, 6, 12);
         System.out.println("Par1 perimeter = " + par1.perimeter());
         System.out.println("Par1 square = " + par1.square());
@@ -22,17 +22,32 @@ public class Auditory {
 
         }
 
-        public Parallelogram(double length, double width, double angle1){
-            this.length = length;
-            this.width = width;
-            this.angle1 = angle1;
+        public Parallelogram(double length, double width, double angle1) throws NegativeLengthException, NegativeWidthException, NegativeAngleException {
+            if(length > 0) {
+                this.length = length;
+            }
+            else{
+                throw new NegativeLengthException("Length can't be less than 0");
+            }
+            if(width > 0) {
+                this.width = width;
+            }
+            else{
+                throw new NegativeWidthException("Width can't be less than 0");
+            }
+            if(angle1 > 0) {
+                this.angle1 = angle1;
+            }
+            else {
+                throw new NegativeAngleException("Angle can't less than 0");
+            }
         }
 
         public double perimeter(){
             return 2 * (length + width);
         }
 
-        public double square(){
+        public double square() throws NegativeLengthException, NegativeAngleException, NegativeWidthException {
             return Math.abs(width * length * width * Math.sin(angle1));
         }
 
@@ -40,24 +55,39 @@ public class Auditory {
             return length;
         }
 
-        public void setLength(double length){
-            this.length = length;
+        public void setLength(double length) throws NegativeLengthException {
+            if(length > 0) {
+                this.length = length;
+            }
+            else{
+                throw new NegativeLengthException("Length can't be less than 0");
+            }
         }
 
-        public final double getWidth(){
+        public final double getWidth() {
             return width;
         }
 
-        public void setWidth(double width){
-            this.width = width;
+        public void setWidth(double width) throws NegativeWidthException {
+            if(width > 0) {
+                this.width = width;
+            }
+            else{
+                throw new NegativeWidthException("Width can't be less than 0");
+            }
         }
 
         public double getAngle1() {
             return angle1;
         }
 
-        public void setAngle1(double angle1){
-            this.angle1 = angle1;
+        public void setAngle1(double angle1) throws NegativeAngleException {
+            if(angle1 > 0) {
+                this.angle1 = angle1;
+            }
+            else {
+                throw new NegativeAngleException("Angle can't less than 0");
+            }
         }
     }
 
@@ -70,14 +100,14 @@ public class Auditory {
 
         }
 
-        public Parallelepiped(double length, double width, double angle1, double height, double angle2, double angle3){
+        public Parallelepiped(double length, double width, double angle1, double height, double angle2, double angle3) throws NegativeLengthException, NegativeAngleException, NegativeWidthException {
             super(length, width, angle1);
             this.height = height;
             this.angle2 = angle2;
             this.angle3 = angle3;
         }
 
-        public double volume(){
+        public double volume() throws NegativeLengthException, NegativeAngleException, NegativeWidthException {
             return Math.abs(super.square() * height * Math.sin(angle2));
         }
 
@@ -85,28 +115,43 @@ public class Auditory {
             return height;
         }
 
-        public void setHeight(double height){
-            this.height = height;
+        public void setHeight(double height) throws NegativeHeightException {
+            if(height > 0) {
+                this.height = height;
+            }
+            else{
+                throw new NegativeHeightException("Height can't be less than 0");
+            }
         }
 
         public double getAngle2() {
             return angle2;
         }
 
-        public void setAngle2(double angle2){
-            this.angle2 = angle2;
+        public void setAngle2(double angle2) throws NegativeAngleException {
+            if(angle2 > 0) {
+                this.angle2 = angle2;
+            }
+            else {
+                throw new NegativeAngleException("Angle can't less than 0");
+            }
         }
 
         public double getAngle3() {
             return angle3;
         }
 
-        public void setAngle3(double angle3){
-            this.angle3 = angle3;
+        public void setAngle3(double angle3) throws NegativeAngleException {
+            if(angle3 > 0) {
+                this.angle3 = angle3;
+            }
+            else {
+                throw new NegativeAngleException("Angle can't less than 0");
+            }
         }
 
         @Override
-        public double square() {
+        public double square() throws NegativeLengthException, NegativeAngleException, NegativeWidthException {
             Parallelogram p2 = new Parallelogram(getLength(), height, angle2);
             Parallelogram p3 = new Parallelogram(getWidth(), height, angle3);
             return 2 * (super.square() + p2.square() + p3.square());

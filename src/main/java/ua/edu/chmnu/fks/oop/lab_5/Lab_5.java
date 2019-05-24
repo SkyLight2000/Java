@@ -24,17 +24,17 @@ public class Lab_5 {
         Parall p1 = new Parall(a1, b1, c1, d1);
         Parall p2 = new Parall(a2, b2, c2, d2);
 
-        double p1Perimeter = p1.Perimeter();
-        double p1Square = p1.Square();
-        double p2Perimeter = p2.Perimeter();
-        double p2Square = p2.Square();
+        double p1Perimeter = p1.perimeter();
+        double p1Square = p1.square();
+        double p2Perimeter = p2.perimeter();
+        double p2Square = p2.square();
 
         System.out.printf("\nПериметр p1: %.2f", p1Perimeter);
         System.out.printf("\nПлощадь p1: %.2f", p1Square);
         System.out.printf("\nПериметр p2 %.2f", p2Perimeter);
         System.out.printf("\nПлощадь p2: %.2f", p2Square);
         System.out.println();
-        p1.Compare(p1, p2);
+        p1.compare(p1, p2);
     }
 }
 
@@ -51,33 +51,33 @@ class Parall {
     double ab, bc, cd, ad, ac;
 
     Parall(Point a, Point b, Point c, Point d){
-        ab = SideLength(a, b);
-        bc = SideLength(b, c);
-        cd = SideLength(c, d);
-        ad = SideLength(a, d);
-        ac = SideLength(a, c);
+        ab = sideLength(a, b);
+        bc = sideLength(b, c);
+        cd = sideLength(c, d);
+        ad = sideLength(a, d);
+        ac = sideLength(a, c);
     }
 
-    public double SideLength(Point a, Point b){
+    public double sideLength(Point a, Point b){
         return Math.sqrt(Math.pow((b.x - a.x), 2) + Math.pow((b.y - a.y), 2));
     }
 
-    public double Perimeter(){
+    public double perimeter(){
         return ab + bc + cd + ad;
     }
 
-    public double Square(){
+    public double square(){
         double p;
         p = (ab + bc + ac) / 2;
         return 2 * Math.sqrt(p * (p - ab) * (p - bc) * (p - ac));
     }
 
-    public void Compare(Parall a, Parall b){
-        if(a.Perimeter() > b.Perimeter() && a.Square() > b.Square()){
+    public void compare(Parall a, Parall b){
+        if(a.perimeter() > b.perimeter() && a.square() > b.square()){
             System.out.println("Периметр параллелограмма p1 больше чем периметр параллелограмма p2");
             System.out.println("Площадь параллелограмма p1 больше чем площадь параллелограмма p2");
         }
-        else if(a.Perimeter() < b.Perimeter() && a.Square() < b.Square()){
+        else if(a.perimeter() < b.perimeter() && a.square() < b.square()){
             System.out.println("Периметр параллелограмма p2 больше чем периметр параллелограмма p1");
             System.out.println("Площадь параллелограмма p2 больше чем площадь параллелограмма p1");
         }

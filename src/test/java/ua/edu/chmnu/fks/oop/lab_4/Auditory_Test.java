@@ -20,25 +20,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class Auditory_Test {
 
-    public Auditory_Test() {
-    }
-
-    @BeforeAll
-    public static void setUpClass() {
-    }
-
-    @AfterAll
-    public static void tearDownClass() {
-    }
-
-    @BeforeEach
-    public void setUp() {
-    }
-
-    @AfterEach
-    public void tearDown() {
-    }
-
     @Test
     public void testFactorial(){
         BigInteger n = Auditory.factorial(4);

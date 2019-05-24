@@ -17,26 +17,6 @@ import static ua.edu.chmnu.fks.oop.lab_6.Lab_6.*;
  */
 public class Lab_6_Test {
 
-    public Lab_6_Test() {
-    }
-
-    @BeforeAll
-    public static void setUpClass() {
-    }
-
-    @AfterAll
-    public static void tearDownClass() {
-    }
-
-    @BeforeEach
-    public void setUp() {
-
-    }
-
-    @AfterEach
-    public void tearDown() {
-    }
-
     @Test
     public void getBookTypeTest(){
         Manual manual = mock(Manual.class);
@@ -119,7 +99,7 @@ public class Lab_6_Test {
     }
 
     @Test
-    public void setYearTest(){
+    public void setYearTest() throws NegativeYearException, FutureYearException {
         Manual manual = mock(Manual.class);
         manual.setYear(2000);
         manual.setYear(2004);
@@ -135,10 +115,13 @@ public class Lab_6_Test {
         inOrder.verify(manual).setYear(2000);
         inOrder.verify(manual, times(3)).setYear(2004);
         inOrder.verify(manual).setYear(2010);
+
+        doThrow(NegativeYearException.class).when(manual).setYear(-2000);
+        doThrow(FutureYearException.class).when(manual).setYear(2020);
     }
 
     @Test
-    public void setPageNumberTest(){
+    public void setPageNumberTest() throws NegativePageNumberException, EnormousPageNumberException {
         Manual manual = mock(Manual.class);
         manual.setPageNumber(250);
         manual.setPageNumber(300);
@@ -154,10 +137,13 @@ public class Lab_6_Test {
         inOrder.verify(manual).setPageNumber(250);
         inOrder.verify(manual, times(3)).setPageNumber(300);
         inOrder.verify(manual).setPageNumber(425);
+
+        doThrow(NegativePageNumberException.class).when(manual).setPageNumber(-223);
+        doThrow(EnormousPageNumberException.class).when(manual).setPageNumber(24000);
     }
 
     @Test
-    public void setPriceTest(){
+    public void setPriceTest() throws NegativePriceException, EnormousPriceException {
         Manual manual = mock(Manual.class);
         manual.setPrice(300);
         manual.setPrice(500);
@@ -173,6 +159,9 @@ public class Lab_6_Test {
         inOrder.verify(manual).setPrice(300);
         inOrder.verify(manual, times(3)).setPrice(500);
         inOrder.verify(manual).setPrice(225);
+
+        doThrow(NegativePriceException.class).when(manual).setPrice(-500);
+        doThrow(EnormousPriceException.class).when(manual).setPrice(300800000);
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
