@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Lab_9 {
     public static void main(String[] args) throws IOException {
-        File file = new File("D:\\Documents\\NetBeansProjects\\OOP-2k-master\\src\\main\\java\\ua\\edu\\chmnu\\fks\\oop\\lab_9\\franxx.txt");
+        File file = new File("D:\\Documents\\NetBeansProjects\\OOP-2k-master\\src\\main\\java\\ua\\edu\\chmnu\\fks\\oop\\lab_9\\text.txt");
         System.out.println(countWord(file));
     }
     public static Map<String, Integer> countWord(File file) throws IOException {
