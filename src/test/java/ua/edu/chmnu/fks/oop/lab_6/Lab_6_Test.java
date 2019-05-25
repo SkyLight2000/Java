@@ -21,36 +21,36 @@ public class Lab_6_Test {
 
     @Test
     public void getNameTest(){
-        Manual manual = mock(Manual.class);
-        when(manual.getName()).thenReturn("Нормальная физиология");
+        Manual manual = new Manual();
+        manual.setName("Нормальная физиология");
         assertEquals("Нормальная физиология", manual.getName());
     }
 
     @Test
     public void getAuthorTest(){
-        Manual manual = mock(Manual.class);
-        when(manual.getAuthor()).thenReturn("Агаджанян Николай Александрович");
+        Manual manual = new Manual();
+        manual.setAuthor("Агаджанян Николай Александрович");
         assertEquals("Агаджанян Николай Александрович", manual.getAuthor());
     }
 
     @Test
-    public void getYearTest(){
-        Manual manual = mock(Manual.class);
-        when(manual.getYear()).thenReturn(2001);
+    public void getYearTest() throws YearException {
+        Manual manual = new Manual();
+        manual.setYear(2001);
         assertEquals(2001, manual.getYear());
     }
 
     @Test
-    public void getPageNumberTest(){
-        Manual manual = mock(Manual.class);
-        when(manual.getPageNumber()).thenReturn(233);
+    public void getPageNumberTest() throws PageNumberException {
+        Manual manual = new Manual();
+        manual.setPageNumber(233);
         assertEquals(233, manual.getPageNumber());
     }
 
     @Test
-    public void getPriceTest(){
-        Manual manual = mock(Manual.class);
-        when(manual.getPrice()).thenReturn(500);
+    public void getPriceTest() throws PriceException {
+        Manual manual = new Manual();
+        manual.setPrice(500);
         assertEquals(500, manual.getPrice());
     }
 
@@ -71,7 +71,6 @@ public class Lab_6_Test {
         inOrder.verify(manual).setName("physics");
         inOrder.verify(manual, times(3)).setName("math");
         inOrder.verify(manual).setName("biology");
-
     }
 
     @Test
@@ -159,10 +158,6 @@ public class Lab_6_Test {
         doThrow(EnormousPriceException.class).when(manual).setPrice(300800000);
     }
 
-    @Test
-    public void getByAuthorTest() {
-
-    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

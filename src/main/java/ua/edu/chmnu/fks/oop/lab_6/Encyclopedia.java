@@ -13,7 +13,6 @@ public class Encyclopedia extends Book {
         super(name, author, year, pageNumber, price);
     }
 
-    @Override
     public String getBookType() {
         return bookType;
     }
